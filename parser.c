@@ -103,7 +103,7 @@ void parse_file ( char * filename,
     double x, y, z, x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, h, w, d, r, r1, r2;
     if ( strncmp(line, "color", strlen(line)) == 0 ) {
       fgets(line, 255, f);
-      sscanf(line, "%lf", &g);
+      sscanf(line, "%d %d %d", &g.red, &g.blue, &g.green);
     }
     if ( strncmp(line, "line", strlen(line)) == 0 ) {
       //      printf("LINE!\n");
