@@ -111,6 +111,7 @@ void parse_file ( char * filename,
       add_edge(pm, x, y, z, x1, y1, z1);
       // printf( "%lf %lf %lf %lf %lf %lf\n", x, y, z, x1, y1, z1);
     }
+
     // These things are new
     else if ( strncmp(line, "clear", strlen(line)) == 0 ) {
     	//printf("CLEAR\n");
@@ -127,8 +128,9 @@ void parse_file ( char * filename,
       add_box(pm, x, y, z, h, w, d);
     }
     else if( strncmp(line, "sphere", strlen(line)) == 0 ){
-	  fgets(line, 255, f);
+	    fgets(line, 255, f);
       sscanf(line, "%lf %lf %lf", &x, &y, &r);
+      //generate_sphere(pm, x, y, r, step);
       add_sphere(pm, x, y, r, step);
     }
     else if( strncmp(line, "torus", strlen(line)) == 0 ){
@@ -137,6 +139,7 @@ void parse_file ( char * filename,
       add_torus(pm, x, y, r1, r2, step);
     }
     // End of new things
+
     else if ( strncmp(line, "circle", strlen(line)) == 0 ) {
       //printf("CIRCLE\n");
       fgets(line, 255, f);
@@ -227,7 +230,7 @@ void parse_file ( char * filename,
       return;
     }
     else {
-      printf("Invalid command\n");
+      printf("Invalid command: %s\n", line);
     }
   }
   
