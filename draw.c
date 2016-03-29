@@ -132,8 +132,8 @@ void generate_torus( struct matrix * points,
 		     double cx, double cy, double r1, double r2, 
 		     double step ) {
   double p, q, x, y, z;
-  for (p = 0; p < 1; p += step){
-    for (q = 0; q < 1; q += step){
+  for (p = 0; p < 2; p += step){
+    for (q = 0; q < 2; q += step){
       x = r1*cos(M_PI*q) + cx;
       y = cos(2*M_PI*p) * (r1*sin(M_PI*q) + r2);//r*sin(M_PI*q)*cos(2*M_PI*p) + cy;
       z = sin(2*M_PI*p) * (r1*sin(M_PI*q) + r2);//r*sin(M_PI*q)*sin(2*M_PI*p);
